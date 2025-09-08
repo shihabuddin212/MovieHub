@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App - Discover Amazing Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🎬 MovieHub</h1>
+            </div>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-bar" 
+                    placeholder="Search for movies..."
+                    autocomplete="off"
+                >
+                <div class="search-icon">🔍</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading">
+                <div class="loader"></div>
+                <p>Loading movies...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops! Something went wrong</h3>
+                <p>Unable to load movies. Please try again later.</p>
+                <button id="retryBtn" class="retry-btn">Retry</button>
+            </div>
+
+            <!-- No Results State -->
+            <div id="noResultsState" class="no-results" style="display: none;">
+                <div class="no-results-icon">🔍</div>
+                <h3>No movies found</h3>
+                <p>Try searching for something else</p>
+            </div>
+
+            <!-- Movies Grid Container -->
+            <div id="moviesContainer" class="movies-grid" style="display: none;">
+                <!-- Movie cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Movie Detail Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-poster">
+                    <img id="modalPoster" src="" alt="Movie Poster">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle" class="modal-movie-title"></h2>
+                    <div class="modal-meta">
+                        <span id="modalYear" class="modal-year"></span>
+                        <span class="separator">•</span>
+                        <span id="modalRating" class="modal-rating"></span>
+                    </div>
+                    <div id="modalGenre" class="modal-genre"></div>
+                    <div class="modal-description">
+                        <h4>Overview</h4>
+                        <p id="modalDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MovieHub. Built with ❤️ using HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
